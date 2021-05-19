@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { todos } from './data/todosData';
 import AddTodo from './components/AddTodo';
+import TodoLists from './components/TodoLists';
 import {
   ChakraProvider,
   Box,
@@ -70,21 +71,7 @@ function App() {
             borderRadius="5px"
             borderColor="blue.100"
           >
-            <List spacing={3} w="100%">
-              {todoItems.map(todo => {
-                return (
-                  <ListItem
-                    key={todo.id}
-                    p={2}
-                    borderRadius="5px"
-                    backgroundColor="blue.100"
-                    color="blackAlpha.800"
-                  >
-                    {todo.title}
-                  </ListItem>
-                );
-              })}
-            </List>
+            <TodoLists todoItems={todoItems} />
           </Flex>
         </Box>
       </Box>
