@@ -1,7 +1,7 @@
 import { FaTrash } from 'react-icons/fa';
 import { Box, List, ListItem, Checkbox, Button } from '@chakra-ui/react';
 
-const TodoLists = ({ todoItems, handleTaskDone }) => {
+const TodoLists = ({ todoItems, handleTaskDone, handleDeleteTodo }) => {
   return (
     <>
       <List spacing={3} w="100%">
@@ -39,6 +39,7 @@ const TodoLists = ({ todoItems, handleTaskDone }) => {
                     _hover={{
                       background: 'red.700',
                     }}
+                    onClick={() => handleDeleteTodo(todo.id)}
                   >
                     <FaTrash style={{ color: 'white', fontSize: '15px' }} />
                   </Button>
