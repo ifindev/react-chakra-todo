@@ -5,9 +5,7 @@ import AddTodo from './components/AddTodo';
 import {
   ChakraProvider,
   Box,
-  Input,
   Flex,
-  Button,
   List,
   ListItem,
   theme,
