@@ -17,7 +17,7 @@ const TodoLists = ({ todoItems, handleTaskDone }) => {
                 backgroundColor={
                   todo.completed ? 'green.100' : 'blackAlpha.100'
                 }
-                color="blackAlpha.800"
+                color={todo.completed ? 'blackAlpha.900' : 'white.900'}
               >
                 <Checkbox
                   mr={5}
