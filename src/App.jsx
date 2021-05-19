@@ -16,6 +16,10 @@ function App() {
   const [todoItems, setTodoItems] = useState(todos);
   const [newTodo, setNewTodo] = useState('');
 
+  const handleTodoInput = inputVal => {
+    setNewTodo(inputVal);
+  };
+
   const handleNewTodo = newItem => {
     if (newItem !== '') {
       const id = todoItems.length + 1;
@@ -52,28 +56,12 @@ function App() {
         </Box>
         <Box mt={10}>
           <Flex>
-            <Input
-              id="input-todo"
-              borderWidth="2px"
-              borderStyle="solid"
-              borderColor="blue.100"
-              variant="filled"
-              placeholder="Add new todo..."
-              value={newTodo}
-              onChange={event => setNewTodo(event.target.value)}
+            <AddTodo
+              inputValue={newTodo}
+              handleTodoInput={handleTodoInput}
+              handleNewTodo={handleNewTodo}
+              newTodo={newTodo}
             />
-            <Button
-              ml={4}
-              colorScheme="blue"
-              fontSize={{
-                sm: 'sm',
-                md: 'md',
-                xl: 'lg',
-              }}
-              onClick={() => handleNewTodo(newTodo)}
-            >
-              Add Todo
-            </Button>
           </Flex>
           <Flex
             mt={5}
@@ -104,5 +92,34 @@ function App() {
     </ChakraProvider>
   );
 }
+
+const AddTodo = ({ inputValue, handleTodoInput, handleNewTodo, newTodo }) => {
+  return (
+    <>
+      <Input
+        id="input-todo"
+        borderWidth="2px"
+        borderStyle="solid"
+        borderColor="blue.100"
+        variant="filled"
+        placeholder="Add new todo..."
+        value={inputValue}
+        onChange={event => handleTodoInput(event.target.value)}
+      />
+      <Button
+        ml={4}
+        colorScheme="blue"
+        fontSize={{
+          sm: 'sm',
+          md: 'md',
+          xl: 'lg',
+        }}
+        onClick={() => handleNewTodo(newTodo)}
+      >
+        Add Todo
+      </Button>
+    </>
+  );
+};
 
 export default App;
