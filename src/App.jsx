@@ -30,6 +30,18 @@ function App() {
     }
   };
 
+  const handleTaskDone = todoId => {
+    const todosUpdate = todoItems.map(todo => {
+      if (todo.id === todoId) {
+        todo.completed = !todo.completed;
+      }
+
+      return todo;
+    });
+    setTodoItems(todosUpdate);
+    console.log(todoItems);
+  };
+
   return (
     <ChakraProvider theme={theme}>
       <Box
@@ -64,7 +76,7 @@ function App() {
             borderRadius="5px"
             borderColor="gray.100"
           >
-            <TodoLists todoItems={todoItems} />
+            <TodoLists todoItems={todoItems} handleTaskDone={handleTaskDone} />
           </Flex>
         </Box>
       </Box>

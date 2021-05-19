@@ -1,6 +1,6 @@
 import { List, ListItem, Checkbox } from '@chakra-ui/react';
 
-const TodoLists = ({ todoItems }) => {
+const TodoLists = ({ todoItems, handleTaskDone }) => {
   return (
     <>
       <List spacing={3} w="100%">
@@ -19,10 +19,7 @@ const TodoLists = ({ todoItems }) => {
               <Checkbox
                 mr={5}
                 borderColor="gray.500"
-                onChange={e => {
-                  console.log(e.target.checked);
-                  console.log(todo.id);
-                }}
+                onChange={e => handleTaskDone(todo.id)}
               ></Checkbox>
 
               {todo.completed ? (
