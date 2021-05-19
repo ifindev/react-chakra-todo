@@ -24,7 +24,15 @@ const TodoLists = ({ todoItems }) => {
                   console.log(todo.id);
                 }}
               ></Checkbox>
-              <span> {todo.title} </span>
+
+              {todo.completed ? (
+                <span style={{ textDecoration: 'line-through' }}>
+                  {' '}
+                  {todo.title}{' '}
+                </span>
+              ) : (
+                <span>{todo.title}</span>
+              )}
             </ListItem>
           );
         })}
