@@ -1,4 +1,4 @@
-import { List, ListItem } from '@chakra-ui/react';
+import { List, ListItem, Checkbox } from '@chakra-ui/react';
 
 const TodoLists = ({ todoItems }) => {
   return (
@@ -8,12 +8,23 @@ const TodoLists = ({ todoItems }) => {
           return (
             <ListItem
               key={todo.id}
-              p={2}
+              d="flex"
+              flexDir="row"
+              alignItems="center"
+              p={3}
               borderRadius="5px"
-              backgroundColor="blue.100"
+              backgroundColor="gray.100"
               color="blackAlpha.800"
             >
-              {todo.title}
+              <Checkbox
+                mr={5}
+                borderColor="gray.500"
+                onChange={e => {
+                  console.log(e.target.checked);
+                  console.log(todo.id);
+                }}
+              ></Checkbox>
+              <span> {todo.title} </span>
             </ListItem>
           );
         })}
