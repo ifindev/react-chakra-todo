@@ -17,18 +17,20 @@ function App() {
   const [newTodo, setNewTodo] = useState('');
 
   const handleNewTodo = newItem => {
-    const id = todoItems.length + 1;
-    const todo = {
-      userId: 1,
-      id: id,
-      title: newItem,
-      completed: false,
-    };
+    if (newItem !== '') {
+      const id = todoItems.length + 1;
+      const todo = {
+        userId: 1,
+        id: id,
+        title: newItem,
+        completed: false,
+      };
 
-    const todosUpdate = [todo, ...todoItems];
-    setTodoItems(todosUpdate);
+      const todosUpdate = [todo, ...todoItems];
+      setTodoItems(todosUpdate);
 
-    setNewTodo('');
+      setNewTodo('');
+    }
   };
 
   return (
