@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { todos } from './data/todosData';
 import AddTodo from './components/AddTodo';
 import TodoLists from './components/TodoLists';
 import { ChakraProvider, Box, Flex, theme } from '@chakra-ui/react';
