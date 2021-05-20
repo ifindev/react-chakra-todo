@@ -43,6 +43,7 @@ function App() {
   };
 
   const handleDeleteTodo = todoId => {
+    // eslint-disable-next-line
     const todosUpdate = todoItems.filter(todo => {
       if (todo.id !== todoId) {
         return todo;
