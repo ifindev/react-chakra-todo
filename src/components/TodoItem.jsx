@@ -1,5 +1,14 @@
-import { FaTrash } from 'react-icons/fa';
-import { Box, Checkbox, Button } from '@chakra-ui/react';
+import { FaTrash, FaRegEdit } from 'react-icons/fa';
+import {
+  Flex,
+  Text,
+  Grid,
+  SimpleGrid,
+  Box,
+  Checkbox,
+  Container,
+  Button,
+} from '@chakra-ui/react';
 
 const TodoItem = ({ todo, handleTaskDone, handleDeleteTodo }) => {
   return (
@@ -18,11 +27,22 @@ const TodoItem = ({ todo, handleTaskDone, handleDeleteTodo }) => {
             borderColor="gray.500"
             onChange={e => handleTaskDone(todo.id)}
           ></Checkbox>
-          <span>{todo.title}</span>
+          <Text>
+            <span>{todo.title}</span>
+          </Text>
         </Box>
 
         <Box>
           <Button
+            backgroundColor="blue.500"
+            _hover={{
+              background: 'blue.700',
+            }}
+          >
+            <FaRegEdit style={{ color: 'white', fontSize: '15px' }} />
+          </Button>
+          <Button
+            ml={2}
             backgroundColor="red.500"
             _hover={{
               background: 'red.700',
