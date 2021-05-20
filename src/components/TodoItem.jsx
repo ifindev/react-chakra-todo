@@ -1,14 +1,5 @@
 import { FaTrash, FaRegEdit } from 'react-icons/fa';
-import {
-  Flex,
-  Text,
-  Grid,
-  SimpleGrid,
-  Box,
-  Checkbox,
-  Container,
-  Button,
-} from '@chakra-ui/react';
+import { Text, Box, Checkbox, Button } from '@chakra-ui/react';
 
 const TodoItem = ({ todo, handleTaskDone, handleDeleteTodo }) => {
   return (
