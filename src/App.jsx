@@ -6,7 +6,7 @@ import TodoLists from './components/TodoLists';
 import { ChakraProvider, Box, Flex, theme } from '@chakra-ui/react';
 
 function App() {
-  const [todoItems, setTodoItems] = useState(todos);
+  const [todoItems, setTodoItems] = useState([]);
   const [newTodo, setNewTodo] = useState('');
 
   const handleTodoInput = inputVal => {
